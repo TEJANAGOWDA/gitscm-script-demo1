@@ -1,22 +1,26 @@
-pipeline {
+pipeline 
+{
     agent any
-    stages {
-        stage('Hello World') {
-            steps {
+    stages 
+    {
+        stage('Hello World') 
+        {
+            steps 
+            {
                 echo 'Hello, World!'
             }
         }
-        stage('Build') {
-            steps {
+        stage('Build') 
+        {
+            steps 
+            {
                 withCredentials ([string(credentialsId: 'mysecret', variable: 'mysecret')])
                 {
                     // some block
                     echo mysecret
                 }
-    
-}
-
-            }
+                
+            } 
         }
     }
 }
